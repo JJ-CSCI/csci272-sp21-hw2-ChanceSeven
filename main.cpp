@@ -14,8 +14,21 @@ public:
     bool operator!();
     void operator>>(std::string&);
     friend void operator<<(std::string&, Rot13&);
+    
 };
+Rot13::Rot13(std::string msg){
+  text=msg;
+  for(auto c:msg){
+    c+=rotation;
+    if(c>'Z'){
+      c-='A';
+    }
+  }
 
+}
+bool Rot13::operator!(){
+  if(text )
+}
 
 //------------------------------
 //   DO NOT MODIFY TEST CASES
